@@ -1,0 +1,1 @@
+# everest-crypto-wallet
