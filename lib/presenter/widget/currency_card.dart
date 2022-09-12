@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../shared/colors.dart';
 
@@ -6,7 +7,7 @@ class CurrencyCard extends StatefulWidget {
   String iconPath;
   String abrevCurrencyName;
   String currencyName;
-  String value;
+  double value;
   double variationValue;
   bool isInfoVisible;
 
@@ -81,7 +82,9 @@ class _CurrencyCardState extends State<CurrencyCard> {
                               borderRadius: BorderRadius.circular(8)),
                         ),
                         child: Text(
-                          'R\$ ${widget.value}',
+                          NumberFormat.simpleCurrency(
+                              locale: 'pt-BR', decimalDigits: 2)
+                          .format(widget.value),
                           style: const TextStyle(
                               fontSize: 19,
                               color: Color.fromRGBO(47, 47, 51, 1)),

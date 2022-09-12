@@ -1,5 +1,6 @@
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import 'widget/currency_card.dart';
 import '../shared/colors.dart';
@@ -12,6 +13,16 @@ class CryptoPage extends StatefulWidget {
 }
 
 class _CryptoPageState extends State<CryptoPage> {
+  double btcQuantity = 0.65;
+  double ethQuantity = 0.94;
+  double ltcQuantity = 0.82;
+
+  static double btcValueOwned = 6557.00;
+  static double ethValueOwned = 7996.00;
+  static double ltcValueOwned = 245.00;
+
+  double totalAmountOwned = btcValueOwned + ethValueOwned + ltcValueOwned;
+
   int _selectedIndex = 0;
   static bool isEyeOpen = true;
 
@@ -72,9 +83,11 @@ class _CryptoPageState extends State<CryptoPage> {
                           color: hiddenInfo,
                           borderRadius: BorderRadius.circular(8)),
                     ),
-                    child: const Text(
-                      'R\$ 14.798,00',
-                      style: TextStyle(
+                    child: Text(
+                      NumberFormat.simpleCurrency(
+                              locale: 'pt-BR', decimalDigits: 2)
+                          .format(totalAmountOwned),
+                      style: const TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w700,
                         color: darkText,
@@ -92,24 +105,24 @@ class _CryptoPageState extends State<CryptoPage> {
               iconPath: 'assets/images/BTC.png',
               abrevCurrencyName: 'BTC',
               currencyName: 'Bitcoin',
-              value: '6.557,00',
-              variationValue: 0.65,
+              value: btcValueOwned,
+              variationValue: btcQuantity,
               isInfoVisible: isEyeOpen,
             ),
             CurrencyCard(
               iconPath: 'assets/images/ETH.png',
               abrevCurrencyName: 'ETH',
               currencyName: 'Ethereum',
-              value: '7.996,00',
-              variationValue: 0.94,
+              value: ethValueOwned,
+              variationValue: ethQuantity,
               isInfoVisible: isEyeOpen,
             ),
             CurrencyCard(
               iconPath: 'assets/images/LTC.png',
               abrevCurrencyName: 'LTC',
               currencyName: 'Litecoin',
-              value: '245,00',
-              variationValue: 0.65,
+              value: ltcValueOwned,
+              variationValue: ltcQuantity,
               isInfoVisible: isEyeOpen,
             ),
           ],
