@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:warren_first_task/presenter/crypto/crypto_page.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'screen/wallet/crypto_page.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Crypto Listing',
-      home: CryptoPage(),
-    );
-  }
+  runApp(
+    const ProviderScope(
+      child: MaterialApp(
+        title: 'Crypto Listing',
+        debugShowCheckedModeBanner: false,
+        home: CryptoPage(),
+      ),
+    ),
+  );
 }

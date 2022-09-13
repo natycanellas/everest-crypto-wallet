@@ -17,7 +17,7 @@ class _BottomNavigationCryptoState extends State<BottomNavigationCrypto> {
 
   @override
   Widget build(BuildContext context) {
-    void _onItemTapped(int index) {
+    void onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -39,7 +39,7 @@ class _BottomNavigationCryptoState extends State<BottomNavigationCrypto> {
         ),
       ],
       currentIndex: _selectedIndex,
-      onTap: _onItemTapped,
+      onTap: onItemTapped,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -7,7 +8,7 @@ class CurrencyCard extends StatefulWidget {
   String iconPath;
   String abrevCurrencyName;
   String currencyName;
-  double value;
+  var value;
   double currencyValue;
   bool isInfoVisible;
 
@@ -52,14 +53,14 @@ class _CurrencyCardState extends State<CurrencyCard> {
                             style: const TextStyle(
                                 fontSize: 19,
                                 fontWeight: FontWeight.w400,
-                                color: Color.fromRGBO(47, 47, 51, 1)),
+                                color: darkText),
                           ),
                           const SizedBox(height: 8),
                           Text(
                             widget.currencyName,
                             style: const TextStyle(
                                 fontSize: 15,
-                                color: Color.fromRGBO(117, 118, 128, 1)),
+                                color: lightText),
                           ),
                         ],
                       )
@@ -84,7 +85,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                         child: Text(
                           NumberFormat.simpleCurrency(
                                   locale: 'pt-BR', decimalDigits: 2)
-                              .format(widget.value),
+                              .format(DecimalIntl(widget.value)),
                           style: const TextStyle(
                               fontSize: 19,
                               color: darkText),
