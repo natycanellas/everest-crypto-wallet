@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../shared/colors.dart';
+import '../../../shared/colors.dart';
 
 class CurrencyCard extends StatefulWidget {
   String iconPath;
   String abrevCurrencyName;
   String currencyName;
   double value;
-  double variationValue;
+  double currencyValue;
   bool isInfoVisible;
 
   CurrencyCard({
@@ -17,7 +17,7 @@ class CurrencyCard extends StatefulWidget {
     required this.abrevCurrencyName,
     required this.currencyName,
     required this.value,
-    required this.variationValue,
+    required this.currencyValue,
     required this.isInfoVisible,
   }) : super(key: key);
 
@@ -83,11 +83,11 @@ class _CurrencyCardState extends State<CurrencyCard> {
                         ),
                         child: Text(
                           NumberFormat.simpleCurrency(
-                              locale: 'pt-BR', decimalDigits: 2)
-                          .format(widget.value),
+                                  locale: 'pt-BR', decimalDigits: 2)
+                              .format(widget.value),
                           style: const TextStyle(
                               fontSize: 19,
-                              color: Color.fromRGBO(47, 47, 51, 1)),
+                              color: darkText),
                         ),
                       ),
                       const SizedBox(height: 8),
@@ -101,10 +101,11 @@ class _CurrencyCardState extends State<CurrencyCard> {
                               borderRadius: BorderRadius.circular(8)),
                         ),
                         child: Text(
-                          '${widget.variationValue} ${widget.abrevCurrencyName}',
+                          '${widget.currencyValue} ${widget.abrevCurrencyName}',
                           style: const TextStyle(
-                              fontSize: 15,
-                              color: Color.fromRGBO(117, 118, 128, 1)),
+                            fontSize: 15,
+                            color: lightText,
+                          ),
                         ),
                       ),
                     ],
@@ -115,7 +116,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     child: Icon(
                       Icons.arrow_forward_ios,
                       size: 18,
-                      color: Color.fromRGBO(117, 118, 128, 1),
+                      color: lightText,
                     ),
                   ),
                 ],

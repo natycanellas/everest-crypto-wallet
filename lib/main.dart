@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:warren_first_task/presenter/crypto_page.dart';
+import 'package:warren_first_task/presenter/crypto/crypto_page.dart';
 
 void main() {
   runApp(const MyApp());
