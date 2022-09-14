@@ -4,16 +4,16 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../shared/colors.dart';
 import '../providers/providers.dart';
 
-class TitleRow extends StatefulHookConsumerWidget {
-  const TitleRow({
+class TitleCryptoRow extends StatefulHookConsumerWidget {
+  const TitleCryptoRow({
     Key? key,
   }) : super(key: key);
 
   @override
-  ConsumerState<TitleRow> createState() => _TitleRowState();
+  ConsumerState<TitleCryptoRow> createState() => _TitleRowState();
 }
 
-class _TitleRowState extends ConsumerState<TitleRow> {
+class _TitleRowState extends ConsumerState<TitleCryptoRow> {
   @override
   Widget build(BuildContext context) {
     var isVisibleState = ref.watch(visibleProvider.state);
