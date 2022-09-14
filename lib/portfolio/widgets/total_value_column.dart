@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../../shared/colors.dart';
+import '../../shared/colors.dart';
 
 class TotalValueColumn extends StatefulWidget {
   const TotalValueColumn({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'screen/wallet/crypto_page.dart';
+import 'portfolio/view/crypto_page.dart';
 
 void main() {
   runApp(

@@ -2,7 +2,7 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../shared/colors.dart';
+import '../../shared/colors.dart';
 
 class CurrencyCard extends StatefulWidget {
   String iconPath;

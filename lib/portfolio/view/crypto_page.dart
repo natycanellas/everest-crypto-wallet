@@ -2,11 +2,11 @@ import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../shared/providers.dart';
-import 'widget/bottom_navigation_crypto.dart';
-import 'widget/currency_card.dart';
-import 'widget/title_row.dart';
-import 'widget/total_value_column.dart';
+import '../providers/providers.dart';
+import '../../shared/bottom_navigation_crypto.dart';
+import '../widgets/currency_card.dart';
+import '../widgets/title_row.dart';
+import '../widgets/total_value_column.dart';
 
 class CryptoPage extends StatefulHookConsumerWidget {
   const CryptoPage({Key? key}) : super(key: key);

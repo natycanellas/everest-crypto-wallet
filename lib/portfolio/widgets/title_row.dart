@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../shared/colors.dart';
-import '../../../shared/providers.dart';
+import '../../shared/colors.dart';
+import '../providers/providers.dart';
 
 class TitleRow extends StatefulHookConsumerWidget {
   const TitleRow({

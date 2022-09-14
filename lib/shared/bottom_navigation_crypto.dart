@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../shared/colors.dart';
+import 'colors.dart';
 
 class BottomNavigationCrypto extends StatefulWidget {
   const BottomNavigationCrypto({
