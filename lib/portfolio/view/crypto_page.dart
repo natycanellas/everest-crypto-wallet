@@ -55,9 +55,14 @@ class _CryptoPageState extends ConsumerState<CryptoPage> {
                 physics: const BouncingScrollPhysics(),
                 itemCount: cryptoList.length,
                 itemBuilder: (context, index) {
-                  return CurrencyListCard(
-                    coin: cryptoList[index],
-                    isInfoVisible: isVisibleState.state,
+                  return Column(
+                    children: [
+                      const Divider(thickness: 1.5,),
+                      CurrencyListCard(
+                        coin: cryptoList[index],
+                        isInfoVisible: isVisibleState.state,
+                      ),
+                    ],
                   );
                 },
               ),
@@ -65,7 +70,7 @@ class _CryptoPageState extends ConsumerState<CryptoPage> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigationCrypto(),
+      bottomNavigationBar: const BottomNavigationCrypto(selectedIndex: 0),
     );
   }
 }
