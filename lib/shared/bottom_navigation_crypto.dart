@@ -1,27 +1,28 @@
-
 import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
-class BottomNavigationCrypto extends StatefulWidget {
+class BottomNavigationCrypto extends StatelessWidget {
+  final int selectedIndex;
+
   const BottomNavigationCrypto({
     Key? key,
+    required this.selectedIndex,
   }) : super(key: key);
-
-  @override
-  State<BottomNavigationCrypto> createState() => _BottomNavigationCryptoState();
-}
-
-class _BottomNavigationCryptoState extends State<BottomNavigationCrypto> {
-  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     void onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+      switch (index) {
+        case 0:
+          Navigator.pushReplacementNamed(context, '/crypto-page');
+          break;
+        case 1:
+          Navigator.pushReplacementNamed(context, '/movimentations-page');
+          break;
+      }
+    }
+
     return BottomNavigationBar(
       selectedItemColor: darkText,
       selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w400),
@@ -38,8 +39,8 @@ class _BottomNavigationCryptoState extends State<BottomNavigationCrypto> {
           label: 'Movimentações',
         ),
       ],
-      currentIndex: _selectedIndex,
       onTap: onItemTapped,
+      currentIndex: selectedIndex,
     );
   }
 }

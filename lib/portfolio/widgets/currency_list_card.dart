@@ -23,9 +23,6 @@ class CurrencyListCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(40),
         child: Image.asset(coin.imagePath, scale: 1.2),
       ),
-      shape: const Border(
-        top: BorderSide(color: lightText),
-      ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
