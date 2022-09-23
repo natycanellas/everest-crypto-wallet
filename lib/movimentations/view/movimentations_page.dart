@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../shared/assets_images.dart';
-import '../../shared/bottom_navigation_crypto.dart';
+import '../../shared/assets/images.dart';
+import '../../shared/widgets/bottom_navigation_crypto.dart';
 
 class MovimentationsPage extends StatelessWidget {
   static const route = '/movimentations-page';

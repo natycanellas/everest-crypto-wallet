@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../shared/colors.dart';
+import '../../shared/styles/colors.dart';
 import '../providers/providers.dart';
 
 class TitleCryptoRow extends StatefulHookConsumerWidget {
@@ -31,7 +31,7 @@ class _TitleRowState extends ConsumerState<TitleCryptoRow> {
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.w700,
-              color: titleMagenta,
+              color: magenta,
             ),
           ),
           IconButton(

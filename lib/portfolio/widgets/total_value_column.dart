@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../shared/colors.dart';
+import '../../shared/styles/colors.dart';
 
 class TotalValueColumn extends StatefulWidget {
   const TotalValueColumn({
@@ -35,7 +35,7 @@ class _TotalValueColumnState extends State<TotalValueColumn> {
               height: 38,
               width: 195,
               decoration: BoxDecoration(
-                  color: hiddenInfo,
+                  color: hiddenBoxColor,
                   borderRadius: BorderRadius.circular(8)),
             ),
             child: Text(
@@ -45,13 +45,13 @@ class _TotalValueColumnState extends State<TotalValueColumn> {
               style: const TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w700,
-                color: darkText,
+                color: darkColor,
               ),
             ),
           ),
           const Text(
             'Valor total de moedas',
-            style: TextStyle(fontSize: 17, color: lightText),
+            style: TextStyle(fontSize: 17, color: lightColor),
           ),
         ],
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
+import '../styles/colors.dart';
 
 class BottomNavigationCrypto extends StatelessWidget {
   final int selectedIndex;
@@ -24,7 +24,7 @@ class BottomNavigationCrypto extends StatelessWidget {
     }
 
     return BottomNavigationBar(
-      selectedItemColor: darkText,
+      selectedItemColor: darkColor,
       selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w400),
       backgroundColor: Colors.white,
       items: const <BottomNavigationBarItem>[

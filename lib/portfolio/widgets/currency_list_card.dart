@@ -1,11 +1,13 @@
 import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:warren_first_task/shared/arguments.dart';
 
-import '../../shared/colors.dart';
-import '../models/crypto_model.dart';
+import '../../shared/styles/colors.dart';
+import '../../shared/models/crypto_model.dart';
 
-class CurrencyListCard extends StatelessWidget {
+class CurrencyListCard extends StatefulHookConsumerWidget {
   CryptoModel coin;
   bool isInfoVisible;
 
@@ -16,36 +18,44 @@ class CurrencyListCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  ConsumerState<CurrencyListCard> createState() => _CurrencyListCardState();
+}
+
+class _CurrencyListCardState extends ConsumerState<CurrencyListCard> {
+  @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () {
+      Navigator.of(context).pushNamed('/details-page', arguments: Arguments(cryptoModel: widget.coin));
+      },
       horizontalTitleGap: 8,
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(40),
-        child: Image.asset(coin.imagePath, scale: 1.2),
+        child: Image.asset(widget.coin.imagePath, scale: 1.2),
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            coin.abbreviation,
+            widget.coin.abbreviation,
             style: const TextStyle(
               fontSize: 19,
               fontWeight: FontWeight.w400,
-              color: darkText,
+              color: darkColor,
             ),
           ),
           Visibility(
-            visible: isInfoVisible,
+            visible: widget.isInfoVisible,
             replacement: Container(
               height: 24,
               width: 100,
               decoration: BoxDecoration(
-                  color: hiddenInfo, borderRadius: BorderRadius.circular(8)),
+                  color: hiddenBoxColor, borderRadius: BorderRadius.circular(8)),
             ),
             child: Text(
               NumberFormat.simpleCurrency(locale: 'pt-BR', decimalDigits: 2)
-                  .format(DecimalIntl(coin.value)),
-              style: const TextStyle(fontSize: 19, color: darkText),
+                  .format(DecimalIntl(widget.coin.value)),
+              style: const TextStyle(fontSize: 19, color: darkColor),
             ),
           ),
         ],
@@ -54,25 +64,25 @@ class CurrencyListCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            coin.name,
+            widget.coin.name,
             style: const TextStyle(
               fontSize: 15,
-              color: lightText,
+              color: lightColor,
             ),
           ),
           Visibility(
-            visible: isInfoVisible,
+            visible: widget.isInfoVisible,
             replacement: Container(
               height: 20,
               width: 55,
               decoration: BoxDecoration(
-                  color: hiddenInfo, borderRadius: BorderRadius.circular(8)),
+                  color: hiddenBoxColor, borderRadius: BorderRadius.circular(8)),
             ),
             child: Text(
-              '${coin.coinAmount} ${coin.abbreviation}',
+              '${widget.coin.coinAmount} ${widget.coin.abbreviation}',
               style: const TextStyle(
                 fontSize: 15,
-                color: lightText,
+                color: lightColor,
               ),
             ),
           ),
@@ -83,7 +93,7 @@ class CurrencyListCard extends StatelessWidget {
         child: Icon(
           Icons.arrow_forward_ios,
           size: 18,
-          color: lightText,
+          color: lightColor,
         ),
       ),
     );

@@ -1,10 +1,10 @@
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:warren_first_task/shared/providers/crypto_list_provider.dart';
 
-import '../../shared/bottom_navigation_crypto.dart';
-import '../dataSources/get_all_cryptos_mock_database.dart';
-import '../models/crypto_model.dart';
+import '../../shared/widgets/bottom_navigation_crypto.dart';
+import '../../shared/models/crypto_model.dart';
 import '../providers/providers.dart';
 import '../widgets/currency_list_card.dart';
 import '../widgets/title_crypto_row.dart';
@@ -20,13 +20,12 @@ class CryptoPage extends StatefulHookConsumerWidget {
 }
 
 class _CryptoPageState extends ConsumerState<CryptoPage> {
-  final getAllcoins = GetAllCryptosMockDatabase();
 
   @override
   Widget build(BuildContext context) {
     var isVisibleState = ref.watch(visibleProvider.state);
 
-    final cryptoList = getAllcoins.getAllCryptos();
+    var cryptoList = ref.watch(cryptoListProvider);
 
     Decimal getTotalOwned(List<CryptoModel> list) {
       Decimal total = Decimal.parse('0');
