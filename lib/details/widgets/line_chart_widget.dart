@@ -2,13 +2,17 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_first_task/shared/models/crypto_model.dart';
-import 'package:warren_first_task/shared/providers/provider_shared.dart';
+
+import 'package:warren_first_task/details/providers/providers.dart';
 
 import '../../shared/styles/colors.dart';
 
 class LineChartWidget extends StatefulHookConsumerWidget {
-  const LineChartWidget({Key? key}) : super(key: key);
+  final List<FlSpot> chartInfoList;
+  const LineChartWidget({
+    super.key,
+    required this.chartInfoList,
+  });
 
   @override
   ConsumerState<LineChartWidget> createState() => _LineChartWidgetState();
@@ -17,34 +21,8 @@ class LineChartWidget extends StatefulHookConsumerWidget {
 class _LineChartWidgetState extends ConsumerState<LineChartWidget> {
   @override
   Widget build(BuildContext context) {
-    final CryptoModel cryptoModel =
-        ref.watch(cryptoCoinProvider.notifier).state;
-    final int days = ref.watch(daySpanProvider.state).state;
-
-    List<FlSpot> createFlSpots() {
-      List<FlSpot> listVariationCoin = [];
-      if (days != 1) {
-        for (int day = 0; day < days; day++) {
-          listVariationCoin.add(
-            FlSpot(
-              day.toDouble(),
-              cryptoModel.yValues![day].toDouble(),
-            ),
-          );
-        }
-        return listVariationCoin;
-      } else {
-        for (int day = 0; day < cryptoModel.yValues!.length; day++) {
-          listVariationCoin.add(
-            FlSpot(
-              day.toDouble(),
-              cryptoModel.yValues![day].toDouble(),
-            ),
-          );
-        }
-        return listVariationCoin;
-      }
-    }
+    final int days = ref.watch(selectDaySpanProvider);
+    List<FlSpot> spots = widget.chartInfoList.sublist(0, days);
 
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) =>
@@ -59,10 +37,13 @@ class _LineChartWidgetState extends ConsumerState<LineChartWidget> {
                   barWidth: 3.5,
                   color: magenta,
                   dotData: FlDotData(show: false),
+                  isCurved: false,
                   isStrokeCapRound: true,
-                  spots: createFlSpots(),
+                  spots: spots,
                 ),
               ],
+              minX: spots.last.x,
+              maxX: spots.first.x,
               betweenBarsData: [],
               titlesData: FlTitlesData(show: false),
               extraLinesData: ExtraLinesData(),
@@ -102,8 +83,6 @@ class _LineChartWidgetState extends ConsumerState<LineChartWidget> {
                   },
                 ),
               ),
-              minX: days.toDouble() - 1,
-              maxX: 0,
               gridData: FlGridData(show: false),
               borderData: FlBorderData(
                 border: const Border(

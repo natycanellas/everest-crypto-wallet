@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:warren_first_task/portfolio/view/crypto_page.dart';
-import 'package:warren_first_task/shared/routes.dart';
+import 'package:warren_first_task/shared/routes/routes.dart';
 
 
 void main() {
