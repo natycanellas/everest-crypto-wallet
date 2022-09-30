@@ -2,7 +2,7 @@ import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../portfolio/useCase/models/crypto_model.dart';
+import '../../portfolio/models/crypto_model.dart';
 import '../../shared/args/arguments.dart';
 import '../widgets/app_bar_details.dart';
 import '../widgets/body_details.dart';

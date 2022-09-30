@@ -1,8 +1,8 @@
-import '../../shared/apiCoingecko/endPoint/crypto_endpoint.dart';
+import '../../shared/apiCoingecko/endPoint/cryptos_endpoint.dart';
 import '../../shared/apiCoingecko/response/cryptoCoin/crypto_response.dart';
 
 class CryptoRepository {
-  final CryptoEndpoint cryptoEndpoint;
+  final CryptosEndpoint cryptoEndpoint;
   CryptoRepository({
     required this.cryptoEndpoint,
   });

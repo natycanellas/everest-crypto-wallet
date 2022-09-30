@@ -1,5 +1,5 @@
 
-import '../../../../details/useCase/models/chart_info_model.dart';
+import '../../../../details/models/chart_info_model.dart';
 import 'chart_info_response.dart';
 
 extension ChartInfoMapper on ChartInfoResponse {

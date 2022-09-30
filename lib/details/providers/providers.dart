@@ -1,6 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../portfolio/useCase/models/crypto_model.dart';
+import '../../portfolio/models/crypto_model.dart';
 
 final selectDaySpanProvider = StateProvider((ref) => 5);
 

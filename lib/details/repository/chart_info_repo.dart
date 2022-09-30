@@ -1,10 +1,9 @@
-
-import '../../shared/apiCoingecko/endPoint/crypto_chart_endpoint.dart';
+import '../../shared/apiCoingecko/endPoint/cryptos_endpoint.dart';
 import '../../shared/apiCoingecko/response/chartInfo/chart_info_response.dart';
 
 
 class ChartInfoRepo {
-  final CryptoChartEndpoint endpoint;
+  final CryptosEndpoint endpoint;
   ChartInfoRepo({
     required this.endpoint,
   });

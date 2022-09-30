@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../portfolio/useCase/models/crypto_model.dart';
+import '../../portfolio/models/crypto_model.dart';
 import '../../shared/styles/colors.dart';
 import '../providers/chart_providers.dart';
 import 'button_days.dart';

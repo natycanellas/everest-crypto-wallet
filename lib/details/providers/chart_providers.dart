@@ -3,11 +3,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../shared/apiCoingecko/endPoint/endPoint_provider.dart';
 import '../repository/chart_info_repo.dart';
 import '../useCase/get_chart_info_usecase.dart';
-import '../useCase/models/chart_info_model.dart';
+import '../models/chart_info_model.dart';
 
 final getChartInfoRepoProvider = StateProvider(
   (ref) => ChartInfoRepo(
-    endpoint: ref.watch(getChartInfoEndpointProvider),
+    endpoint: ref.watch(cryptosEndPointProvider),
   ),
 );
 

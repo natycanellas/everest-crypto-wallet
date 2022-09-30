@@ -1,5 +1,5 @@
-import '../../../../portfolio/useCase/models/crypto_list_model.dart';
-import '../../../../portfolio/useCase/models/crypto_model.dart';
+import '../../../../portfolio/models/crypto_list_model.dart';
+import '../../../../portfolio/models/crypto_model.dart';
 import 'crypto_response.dart';
 
 extension CryptoMapper on List<CryptoResponse> {

@@ -1,6 +1,6 @@
 import 'package:decimal/decimal.dart';
 
-import '../../portfolio/useCase/models/crypto_model.dart';
+import '../../portfolio/models/crypto_model.dart';
 
 class Arguments {
   CryptoModel cryptoModel;

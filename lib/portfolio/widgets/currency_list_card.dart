@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 
 import '../../shared/args/arguments.dart';
 import '../../shared/styles/colors.dart';
-import '../useCase/models/crypto_model.dart';
+import '../models/crypto_model.dart';
 
 class CurrencyListCard extends StatefulHookConsumerWidget {
   CryptoModel coin;

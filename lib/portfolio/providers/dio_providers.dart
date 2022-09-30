@@ -8,7 +8,7 @@ import '../useCase/getTotal/get_total_value_usecase.dart';
 
 final getCryptoRepositoryProv = StateProvider(
   (ref) => CryptoRepository(
-    cryptoEndpoint: ref.watch(getCryptoEndPointProvider),
+    cryptoEndpoint: ref.watch(cryptosEndPointProvider),
   ),
 );
 
