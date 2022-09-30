@@ -2,8 +2,8 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_first_task/portfolio/providers/dio_providers.dart';
-import 'package:warren_first_task/portfolio/providers/providers.dart';
+import '../providers/dio_providers.dart';
+import '../providers/providers.dart';
 
 import '../../shared/styles/colors.dart';
 

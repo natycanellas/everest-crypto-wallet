@@ -1,20 +1,10 @@
 import 'package:decimal/decimal.dart';
-import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../shared/api_request_url.dart';
-import '../endPoint/crypto_endpoint.dart';
+import '../../shared/apiCoingecko/endPoint/endPoint_provider.dart';
 import '../repository/crypto_repository.dart';
 import '../useCase/getCrypto/get_crypto_list_usecase.dart';
 import '../useCase/getTotal/get_total_value_usecase.dart';
-
-
-final getCryptoEndPointProvider = Provider(
-  (ref) {
-    final dio = Dio(BaseOptions(baseUrl: baseUrlApi));
-    return CryptoEndpoint(dio: dio);
-  }
-);
 
 final getCryptoRepositoryProv = StateProvider(
   (ref) => CryptoRepository(

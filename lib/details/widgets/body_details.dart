@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 
 import '../../portfolio/useCase/models/crypto_model.dart';
 import '../../shared/styles/colors.dart';
-import '../dio/providers/chart_providers.dart';
+import '../providers/chart_providers.dart';
 import 'button_days.dart';
 import 'convert_button_details.dart';
 import 'currency_info_card.dart';

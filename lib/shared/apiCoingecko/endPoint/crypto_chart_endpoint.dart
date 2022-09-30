@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:warren_first_task/shared/api_request_url.dart';
+
+import '../api_request_url.dart';
 
 class CryptoChartEndpoint {
  final Dio dio;

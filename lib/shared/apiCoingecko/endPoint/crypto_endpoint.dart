@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../../shared/api_request_url.dart';
+import '../api_request_url.dart';
 
 class CryptoEndpoint {
   final Dio dio;

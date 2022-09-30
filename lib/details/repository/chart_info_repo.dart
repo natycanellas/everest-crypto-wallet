@@ -1,6 +1,7 @@
 
-import 'package:warren_first_task/details/dio/endPoint/crypto_chart_endpoint.dart';
-import 'package:warren_first_task/details/dio/response/chart_info_response.dart';
+import '../../shared/apiCoingecko/endPoint/crypto_chart_endpoint.dart';
+import '../../shared/apiCoingecko/response/chartInfo/chart_info_response.dart';
+
 
 class ChartInfoRepo {
   final CryptoChartEndpoint endpoint;

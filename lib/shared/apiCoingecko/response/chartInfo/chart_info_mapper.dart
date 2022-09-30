@@ -1,5 +1,6 @@
-import 'package:warren_first_task/details/dio/response/chart_info_response.dart';
-import 'package:warren_first_task/details/dio/useCase/models/chart_info_model.dart';
+
+import '../../../../details/useCase/models/chart_info_model.dart';
+import 'chart_info_response.dart';
 
 extension ChartInfoMapper on ChartInfoResponse {
   ChartInfoModel toSeeData() {

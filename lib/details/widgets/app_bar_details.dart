@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_first_task/details/providers/providers.dart';
 
 import '../../shared/styles/colors.dart';
+import '../providers/providers.dart';
 
 class AppBarDetails extends HookConsumerWidget implements PreferredSizeWidget {
   const AppBarDetails({

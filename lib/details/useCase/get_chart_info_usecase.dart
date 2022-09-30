@@ -1,6 +1,6 @@
+import '../../shared/apiCoingecko/response/chartInfo/chart_info_mapper.dart';
+import '../../shared/apiCoingecko/response/chartInfo/chart_info_response.dart';
 import '../repository/chart_info_repo.dart';
-import '../response/chart_info_mapper.dart';
-import '../response/chart_info_response.dart';
 import 'models/chart_info_model.dart';
 
 class GetChartInfoUsecase {
