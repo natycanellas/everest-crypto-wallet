@@ -1,9 +1,9 @@
+import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../shared/arguments.dart';
-import '../../shared/models/crypto_model.dart';
-import '../../shared/providers/provider_shared.dart';
+import '../../portfolio/models/crypto_model.dart';
+import '../../shared/args/arguments.dart';
 import '../widgets/app_bar_details.dart';
 import '../widgets/body_details.dart';
 
@@ -15,14 +15,16 @@ class DetailsPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final args = ModalRoute.of(context)!.settings.arguments as Arguments;
-    CryptoModel crypto = args.cryptoModel!;
-    ref.read(cryptoCoinProvider.notifier).state = crypto;
+    CryptoModel crypto = args.cryptoModel;
+    Decimal userAmount = args.userAmountCrypto;
 
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBarDetails(),
-      body: BodyDetails(),
+      appBar: const AppBarDetails(),
+      body: BodyDetails(
+        coin: crypto,
+        amount: userAmount,
+      ),
     );
   }
 }
-

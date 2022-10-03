@@ -1,27 +1,25 @@
-
-import 'package:decimal/decimal.dart';
 import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+import '../providers/dio_providers.dart';
+import '../providers/providers.dart';
 
 import '../../shared/styles/colors.dart';
 
-class TotalValueColumn extends StatefulWidget {
+class TotalValueColumn extends StatefulHookConsumerWidget {
   const TotalValueColumn({
     Key? key,
     required this.isVisibleState,
-    required this.totalAmountOwned,
   }) : super(key: key);
 
   final StateController<bool> isVisibleState;
-  final Decimal totalAmountOwned;
 
   @override
-  State<TotalValueColumn> createState() => _TotalValueColumnState();
+  ConsumerState<TotalValueColumn> createState() => _TotalValueColumnState();
 }
 
-class _TotalValueColumnState extends State<TotalValueColumn> {
+class _TotalValueColumnState extends ConsumerState<TotalValueColumn> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -38,15 +36,28 @@ class _TotalValueColumnState extends State<TotalValueColumn> {
                   color: hiddenBoxColor,
                   borderRadius: BorderRadius.circular(8)),
             ),
-            child: Text(
-              NumberFormat.simpleCurrency(
-                      locale: 'pt-BR', decimalDigits: 2)
-                  .format(DecimalIntl(widget.totalAmountOwned)),
-              style: const TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w700,
-                color: darkColor,
-              ),
+            child: FutureBuilder(
+              future: ref.watch(
+                  getTotalProvider(ref.watch(userAmountProvider)).future),
+              builder: ((context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(
+                    NumberFormat.simpleCurrency(
+                            locale: 'pt-BR', decimalDigits: 2)
+                        .format(DecimalIntl(snapshot.data!)),
+                    style: const TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                      color: darkColor,
+                    ),
+                  );
+                } else {
+                  return const Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              }),
             ),
           ),
           const Text(
