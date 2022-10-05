@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final visibleProvider = StateProvider((ref) => true);
 
-final userAmountProvider = Provider((ref) => [0.74, 1.56, 0.89, 3.54, 0.55]);
+final userAmountProvider = Provider((ref) => [0.7486532, 1.5687643, 1.892548743, 7.546453, 2.55543443]);
 
 class UserAmountNotifier extends StateNotifier<Decimal> {
   UserAmountNotifier()

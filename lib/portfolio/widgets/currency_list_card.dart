@@ -41,7 +41,7 @@ class _CurrencyListCardState extends ConsumerState<CurrencyListCard> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            widget.coin.symbol,
+            widget.coin.symbol.toUpperCase(),
             style: const TextStyle(
               fontSize: 19,
               fontWeight: FontWeight.w400,

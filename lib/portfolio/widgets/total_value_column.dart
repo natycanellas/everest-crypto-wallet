@@ -2,10 +2,10 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import '../providers/dio_providers.dart';
-import '../providers/providers.dart';
 
 import '../../shared/styles/colors.dart';
+import '../providers/dio_providers.dart';
+import '../providers/providers.dart';
 
 class TotalValueColumn extends StatefulHookConsumerWidget {
   const TotalValueColumn({
