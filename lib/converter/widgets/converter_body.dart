@@ -22,7 +22,6 @@ class ConverterBody extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // ref.read(firstSelectedCoinProvider.notifier).state = cryptoCoin;
     final secondSelectedCrypto = ref.watch(secondSelectedCoinProvider.state);
     final valueController =
         ref.watch(valueCryptoTextFieldControllerProvider.state);

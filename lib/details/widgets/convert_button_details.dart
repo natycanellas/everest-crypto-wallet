@@ -1,5 +1,6 @@
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
+import 'package:warren_first_task/converter/view/converter_page.dart';
 
 import '../../portfolio/models/crypto_model.dart';
 import '../../shared/args/arguments.dart';
@@ -24,7 +25,7 @@ class ConvertButtonDetails extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(
               context,
-              '/converter',
+              ConverterPage.route,
               arguments: Arguments(
                 cryptoModel: crypto,
                 userAmountCrypto: userAmount,
