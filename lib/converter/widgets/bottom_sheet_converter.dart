@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:warren_first_task/portfolio/models/crypto_model.dart';
+import 'package:warren_first_task/review/view/review_page.dart';
+import 'package:warren_first_task/shared/args/arguments.dart';
 
 import '../../shared/styles/colors.dart';
 import '../providers/convert_providers.dart';
 
 class BottomSheetConverter extends ConsumerWidget {
-  const BottomSheetConverter({Key? key}) : super(key: key);
+  final CryptoModel firstCryptoCoin;
+  const BottomSheetConverter({
+    Key? key,
+    required this.firstCryptoCoin,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -54,7 +61,16 @@ class BottomSheetConverter extends ConsumerWidget {
             ],
           ),
           FloatingActionButton(
-            onPressed: isEnabled.state ? () {} : null,
+            onPressed: isEnabled.state
+                ? () {
+                    Navigator.of(context).pushNamed(
+                      ReviewPage.route,
+                      arguments: Arguments(
+                        cryptoModel: firstCryptoCoin,
+                      ),
+                    );
+                  }
+                : null,
             backgroundColor: isEnabled.state ? magenta : hiddenBoxColor,
             child: const Icon(Icons.arrow_forward_outlined),
           )
