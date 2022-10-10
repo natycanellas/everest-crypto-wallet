@@ -15,14 +15,14 @@ import 'line_chart_widget.dart';
 class BodyDetails extends HookConsumerWidget {
   CryptoModel coin;
   Decimal amount;
-  BodyDetails({super.key, 
+  BodyDetails({
+    super.key,
     required this.coin,
     required this.amount,
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
     TextStyle infoStyle = const TextStyle(
         fontSize: 18, color: darkColor, fontWeight: FontWeight.w400);
 
@@ -51,7 +51,10 @@ class BodyDetails extends HookConsumerWidget {
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(40),
-                  child: Image.network(coin.image, scale: 4.5,),
+                  child: Image.network(
+                    coin.image,
+                    scale: 4.5,
+                  ),
                 ),
               ],
             ),
@@ -131,7 +134,10 @@ class BodyDetails extends HookConsumerWidget {
               style: infoStyle,
             ),
             const SizedBox(height: 16),
-            const ConvertButtonDetails(),
+            ConvertButtonDetails(
+              crypto: coin,
+              userAmount: amount,
+            ),
             const SizedBox(height: 16),
           ],
         ),

@@ -3,6 +3,7 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:warren_first_task/details/view/details_page.dart';
 
 import '../../shared/args/arguments.dart';
 import '../../shared/styles/colors.dart';
@@ -29,7 +30,7 @@ class _CurrencyListCardState extends ConsumerState<CurrencyListCard> {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        Navigator.of(context).pushNamed('/details-page',
+        Navigator.of(context).pushNamed(DetailsPage.route,
             arguments: Arguments(cryptoModel: widget.coin, userAmountCrypto: widget.userAmountCrypto));
       },
       horizontalTitleGap: 8,
@@ -41,7 +42,7 @@ class _CurrencyListCardState extends ConsumerState<CurrencyListCard> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            widget.coin.symbol,
+            widget.coin.symbol.toUpperCase(),
             style: const TextStyle(
               fontSize: 19,
               fontWeight: FontWeight.w400,

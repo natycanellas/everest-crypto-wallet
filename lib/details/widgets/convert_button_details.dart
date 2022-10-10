@@ -1,10 +1,19 @@
+import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
+import 'package:warren_first_task/converter/view/converter_page.dart';
+
+import '../../portfolio/models/crypto_model.dart';
+import '../../shared/args/arguments.dart';
 
 import '../../shared/styles/colors.dart';
 
 class ConvertButtonDetails extends StatelessWidget {
-  const ConvertButtonDetails({
+  CryptoModel crypto;
+  Decimal userAmount;
+  ConvertButtonDetails({
     Key? key,
+    required this.crypto,
+    required this.userAmount,
   }) : super(key: key);
 
   @override
@@ -13,7 +22,16 @@ class ConvertButtonDetails extends StatelessWidget {
       height: 56,
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              ConverterPage.route,
+              arguments: Arguments(
+                cryptoModel: crypto,
+                userAmountCrypto: userAmount,
+              ),
+            );
+          },
           style: ElevatedButton.styleFrom(backgroundColor: magenta),
           child: const Text(
             'Converter moeda',
