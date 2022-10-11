@@ -1,5 +1,5 @@
-import 'package:warren_first_task/review/view/review_page.dart';
-import 'package:warren_first_task/success/view/success_page.dart';
+import '../../review/view/review_page.dart';
+import '../../success/view/success_page.dart';
 
 import '../../converter/view/converter_page.dart';
 

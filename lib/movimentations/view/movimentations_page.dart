@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
-import '../../shared/assets/images.dart';
 import '../../shared/widgets/bottom_navigation_crypto.dart';
+import '../widgets/movimentations_body.dart';
 
 class MovimentationsPage extends StatelessWidget {
   static const route = '/movimentations-page';
 
-  const MovimentationsPage({ Key? key }) : super(key: key);
+  const MovimentationsPage({Key? key}) : super(key: key);
 
-   @override
-   Widget build(BuildContext context) {
-       return Scaffold(
-           body: Center(child: Lottie.asset(lottieInProgress)),
-           bottomNavigationBar: const BottomNavigationCrypto(selectedIndex: 1),
-       );
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: MovimentationsBody(),
+      bottomNavigationBar: BottomNavigationCrypto(selectedIndex: 1),
+    );
   }
 }

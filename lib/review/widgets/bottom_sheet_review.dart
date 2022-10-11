@@ -1,8 +1,11 @@
+import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_first_task/portfolio/models/crypto_model.dart';
-import 'package:warren_first_task/shared/widgets/magenta_bottom_button.dart';
-import 'package:warren_first_task/success/view/success_page.dart';
+import '../../movimentations/models/movimentation_model.dart';
+import '../../movimentations/providers/movimentations_provider.dart';
+import '../../portfolio/models/crypto_model.dart';
+import '../../shared/widgets/magenta_bottom_button.dart';
+import '../../success/view/success_page.dart';
 
 import '../../converter/providers/convert_providers.dart';
 import 'sheet_row_conversion_info.dart';
@@ -22,6 +25,7 @@ class BottomSheetReview extends HookConsumerWidget {
         ref.watch(valueCryptoTextFieldControllerProvider.state);
     String abbrevFirstCrypto = firstCrypto.symbol.toUpperCase();
     String abbrevSecCrypto = secondCrypto.state.symbol.toUpperCase();
+    final movimentation = ref.watch(movimentationsListProvider.state);
 
     double getExchangeRate() {
       double total;
@@ -39,14 +43,16 @@ class BottomSheetReview extends HookConsumerWidget {
           ),
           SheetRowConversionInfo(
             textOne: 'Converter',
-            textTwo: '${valueController.state.text.replaceAll('.', ',')} $abbrevFirstCrypto',
+            textTwo:
+                '${valueController.state.text.replaceAll('.', ',')} $abbrevFirstCrypto',
           ),
           const Divider(
             thickness: 1,
           ),
           SheetRowConversionInfo(
             textOne: 'Receber',
-            textTwo: '${estimatedTotal.state.toStringAsFixed(6).replaceAll('.', ',')} $abbrevSecCrypto',
+            textTwo:
+                '${estimatedTotal.state.toStringAsFixed(6).replaceAll('.', ',')} $abbrevSecCrypto',
           ),
           const Divider(
             thickness: 1,
@@ -64,6 +70,16 @@ class BottomSheetReview extends HookConsumerWidget {
                 title: 'Concluir Conversão',
                 onPressed: () {
                   Navigator.of(context).pushNamed(SuccessPage.route);
+                  movimentation.state.add(
+                    MovimentationModel(
+                      firstCryptoModel: firstCrypto,
+                      secondCryptoModel: secondCrypto.state,
+                      valueFirstCrypto: Decimal.parse(valueController.state.text.toString().replaceAll(',', '.')),
+                      valueSecondCrypto: Decimal.parse(estimatedTotal.state.toString()),
+                      conversionInReais: Decimal.parse((secondCrypto.state.actualPrice * estimatedTotal.state).toString()),
+                      conversionDate: DateTime.now(),
+                    ),
+                  );
                 },
               )),
         ],

@@ -3,7 +3,7 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_first_task/details/view/details_page.dart';
+import '../../details/view/details_page.dart';
 
 import '../../shared/args/arguments.dart';
 import '../../shared/styles/colors.dart';

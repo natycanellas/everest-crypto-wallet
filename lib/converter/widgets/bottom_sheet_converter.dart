@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_first_task/portfolio/models/crypto_model.dart';
-import 'package:warren_first_task/review/view/review_page.dart';
-import 'package:warren_first_task/shared/args/arguments.dart';
+import '../../portfolio/models/crypto_model.dart';
+import '../../review/view/review_page.dart';
+import '../../shared/args/arguments.dart';
 
 import '../../shared/styles/colors.dart';
 import '../providers/convert_providers.dart';
