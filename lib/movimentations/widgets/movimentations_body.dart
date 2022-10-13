@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../shared/styles/colors.dart';
 
+import '../../shared/styles/colors.dart';
 import 'list_view_movimentations.dart';
 
 class MovimentationsBody extends StatelessWidget {

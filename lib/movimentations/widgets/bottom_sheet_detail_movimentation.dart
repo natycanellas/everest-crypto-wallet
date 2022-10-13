@@ -1,12 +1,11 @@
 import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/movimentation_model.dart';
-import 'column_coin_detail.dart';
-import 'divider_bottom_sheet_detail.dart';
-import 'row_bottom_info_detail_movimentation.dart';
 
 import '../../shared/styles/colors.dart';
+import '../models/movimentation_model.dart';
+import 'column_coin_detail.dart';
+import 'row_bottom_info_detail_movimentation.dart';
 
 class BottomSheetDetailMovimentation extends StatelessWidget {
   final MovimentationModel movimentationInfo;
@@ -50,13 +49,19 @@ class BottomSheetDetailMovimentation extends StatelessWidget {
                 movimentationInfo.secondCryptoModel.symbol.toUpperCase(),
             coinValue: movimentationInfo.valueSecondCrypto.toStringAsFixed(4),
           ),
-          const DividerBottomSheetDetail(),
+          const Divider(
+            thickness: 1.3,
+            height: 22,
+          ),
           RowBottomInfoDetailMovimentation(
             title: "Data da Operação",
             info: DateFormat("dd/MM/yyyy")
                 .format(movimentationInfo.conversionDate),
           ),
-          const DividerBottomSheetDetail(),
+          const Divider(
+            thickness: 1.3,
+            height: 22,
+          ),
           RowBottomInfoDetailMovimentation(
             title: 'Valor em reais',
             info: NumberFormat.simpleCurrency(

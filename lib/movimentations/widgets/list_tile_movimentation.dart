@@ -1,9 +1,9 @@
 import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/movimentation_model.dart';
-import '../../shared/styles/colors.dart';
 
+import '../../shared/styles/colors.dart';
+import '../models/movimentation_model.dart';
 import 'bottom_sheet_detail_movimentation.dart';
 
 class ListTileMovimentation extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../shared/styles/colors.dart';
-import 'divider_bottom_sheet_detail.dart';
+import 'row_coin_info_detail.dart';
 
 class ColumnCoinDetail extends StatelessWidget {
   final String title;
@@ -21,7 +21,10 @@ class ColumnCoinDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const DividerBottomSheetDetail(),
+        const Divider(
+          thickness: 1.3,
+          height: 22,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -40,50 +43,12 @@ class ColumnCoinDetail extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 8),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              'Moeda',
-              style: TextStyle(
-                fontSize: 19,
-                color: darkColor,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              coinAbbrev,
-              style: const TextStyle(
-                fontSize: 19,
-                color: lightColor,
-                fontWeight: FontWeight.w400,
-              ),
-            )
-          ],
-        ),
+        RowCoinInfoDetail(title: 'Moeda', info: coinAbbrev),
         const SizedBox(height: 8),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              'Quantidade',
-              style: TextStyle(
-                fontSize: 19,
-                color: darkColor,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              coinValue,
-              style: const TextStyle(
-                fontSize: 19,
-                color: lightColor,
-                fontWeight: FontWeight.w400,
-              ),
-            )
-          ],
-        ),
+        RowCoinInfoDetail(title: 'Quantidade', info: coinValue),
       ],
     );
   }
 }
+
+

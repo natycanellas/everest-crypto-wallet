@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
-import '../providers/movimentations_provider.dart';
+
 import '../../shared/assets/images.dart';
 import '../../shared/styles/colors.dart';
-
+import '../providers/movimentations_provider.dart';
 import 'list_tile_movimentation.dart';
 
 class ListViewMovimentations extends HookConsumerWidget {
