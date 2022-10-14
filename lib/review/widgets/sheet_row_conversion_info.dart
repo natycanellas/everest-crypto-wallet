@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:warren_first_task/shared/styles/colors.dart';
+
+import '../../shared/styles/colors.dart';
 
 class SheetRowConversionInfo extends StatelessWidget {
   final String textOne;

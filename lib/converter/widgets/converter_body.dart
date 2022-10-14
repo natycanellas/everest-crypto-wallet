@@ -49,14 +49,14 @@ class ConverterBody extends HookConsumerWidget {
 
     bool checkCryptoValuePossible() {
       if (valueController.state.text != '') {
-        if (double.parse(valueController.state.text.replaceAll(',', '.')) <=
-            (balanceAvailable.toDouble())) {
-          return true;
-        } else {
+        if (double.parse(valueController.state.text.replaceAll(',', '.')) >
+            (balanceAvailable.toDouble()) || double.parse(valueController.state.text.replaceAll(',', '.')) == 0) {
           return false;
+        } else {
+          return true;
         }
       }
-      return true;
+      return false;
     }
 
     floatButtonIsEnabled() {

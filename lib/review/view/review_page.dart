@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
 import '../../portfolio/models/crypto_model.dart';
-import '../../shared/args/arguments.dart';
 import '../widgets/bottom_sheet_review.dart';
 import '../widgets/review_body.dart';
 
 class ReviewPage extends StatelessWidget {
+  static const route = '/review-page';
 
-  static const route = '/review-page'; 
+  final CryptoModel cryptoCoin;
 
-  const ReviewPage({Key? key}) : super(key: key);
+  const ReviewPage({
+    Key? key,
+    required this.cryptoCoin,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as Arguments;
-    CryptoModel cryptoCoin = args.cryptoModel;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -34,6 +35,3 @@ class ReviewPage extends StatelessWidget {
     );
   }
 }
-
-
-

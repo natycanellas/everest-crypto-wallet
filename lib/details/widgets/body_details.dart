@@ -8,9 +8,9 @@ import '../../converter/view/converter_page.dart';
 import '../../portfolio/models/crypto_model.dart';
 import '../../shared/args/arguments.dart';
 import '../../shared/styles/colors.dart';
+import '../../shared/widgets/magenta_bottom_button.dart';
 import '../providers/chart_providers.dart';
 import 'button_days.dart';
-import '../../shared/widgets/magenta_bottom_button.dart';
 import 'currency_info_card.dart';
 import 'line_chart_widget.dart';
 

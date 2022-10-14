@@ -1,9 +1,9 @@
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../providers/convert_providers.dart';
 
 import '../../shared/styles/colors.dart';
+import '../providers/convert_providers.dart';
 
 class AppBarConverter extends ConsumerWidget implements PreferredSizeWidget {
   const AppBarConverter({
@@ -16,6 +16,7 @@ class AppBarConverter extends ConsumerWidget implements PreferredSizeWidget {
     final valueController =
         ref.watch(valueCryptoTextFieldControllerProvider.state);
     final estimated = ref.watch(totalCalcProvider.state);
+    final isEnabled = ref.watch(isEnabledButtonProvider.state);
 
     return AppBar(
       leading: IconButton(
@@ -25,6 +26,7 @@ class AppBarConverter extends ConsumerWidget implements PreferredSizeWidget {
           valueController.state.clear();
           convertReais.state = Decimal.parse('0');
           estimated.state = 0.0;
+          isEnabled.state = false;
           Navigator.of(context).pop();
         }),
       ),
