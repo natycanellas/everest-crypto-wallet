@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../converter/view/converter_page.dart';
 import '../../portfolio/models/crypto_model.dart';
+import '../../shared/args/arguments.dart';
 import '../../shared/styles/colors.dart';
 import '../providers/chart_providers.dart';
 import 'button_days.dart';
-import 'convert_button_details.dart';
+import '../../shared/widgets/magenta_bottom_button.dart';
 import 'currency_info_card.dart';
 import 'line_chart_widget.dart';
 
@@ -134,9 +136,18 @@ class BodyDetails extends HookConsumerWidget {
               style: infoStyle,
             ),
             const SizedBox(height: 16),
-            ConvertButtonDetails(
-              crypto: coin,
-              userAmount: amount,
+            MagentaBottomButton(
+              title: 'Converter moeda',
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  ConverterPage.route,
+                  arguments: Arguments(
+                    cryptoModel: coin,
+                    userAmountCrypto: amount,
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 16),
           ],

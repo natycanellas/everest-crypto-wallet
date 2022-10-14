@@ -16,7 +16,7 @@ class DetailsPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final args = ModalRoute.of(context)!.settings.arguments as Arguments;
     CryptoModel crypto = args.cryptoModel;
-    Decimal userAmount = args.userAmountCrypto;
+    Decimal userAmount = args.userAmountCrypto!;
 
     return Scaffold(
       backgroundColor: Colors.white,

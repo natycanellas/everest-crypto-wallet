@@ -15,7 +15,7 @@ class ConverterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as Arguments;
     CryptoModel cryptoModelCoin = args.cryptoModel;
-    Decimal userAmount = args.userAmountCrypto;
+    Decimal userAmount = args.userAmountCrypto!;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -24,7 +24,7 @@ class ConverterPage extends StatelessWidget {
         cryptoCoin: cryptoModelCoin,
         amountCrypto: userAmount,
       ),
-      bottomSheet: const BottomSheetConverter(),
+      bottomSheet: BottomSheetConverter(firstCryptoCoin: cryptoModelCoin),
     );
   }
 }
