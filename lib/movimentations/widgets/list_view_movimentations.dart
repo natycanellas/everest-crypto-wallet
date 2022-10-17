@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
+import 'package:warren_first_task/l10n/app_localizations.dart';
 
 import '../../shared/assets/images.dart';
 import '../../shared/styles/colors.dart';
@@ -20,9 +21,9 @@ class ListViewMovimentations extends HookConsumerWidget {
           child: Column(
         children: [
           Lottie.asset(lottieNoData),
-          const Text(
-            'Nenhuma movimentação foi encontrada!',
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context)!.noMovimentations,
+            style: const TextStyle(
               fontSize: 19,
               color: lightColor,
               fontWeight: FontWeight.w700,

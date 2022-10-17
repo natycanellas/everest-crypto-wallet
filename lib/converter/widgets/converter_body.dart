@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../portfolio/models/crypto_model.dart';
 import '../../shared/styles/colors.dart';
 import '../providers/convert_providers.dart';
@@ -50,7 +51,9 @@ class ConverterBody extends HookConsumerWidget {
     bool checkCryptoValuePossible() {
       if (valueController.state.text != '') {
         if (double.parse(valueController.state.text.replaceAll(',', '.')) >
-            (balanceAvailable.toDouble()) || double.parse(valueController.state.text.replaceAll(',', '.')) == 0) {
+                (balanceAvailable.toDouble()) ||
+            double.parse(valueController.state.text.replaceAll(',', '.')) ==
+                0) {
           return false;
         } else {
           return true;
@@ -79,11 +82,11 @@ class ConverterBody extends HookConsumerWidget {
             userAmountCoin: amountCrypto,
             crypto: cryptoCoin,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
             child: Text(
-              'Quanto você gostaria de converter?',
-              style: TextStyle(
+              AppLocalizations.of(context)!.convertQuestion,
+              style: const TextStyle(
                   fontSize: 26, fontWeight: FontWeight.w700, color: darkColor),
             ),
           ),

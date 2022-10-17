@@ -1,0 +1,63 @@
+{
+    "cryptoTitle": "Crypto",
+    "@cryptoTitle": {
+      "description": "title of portfolio page"
+    },
+    "cryptoSubtitle": "Total value of coins",
+    
+    "portfolio": "Portfolio",
+    
+    "movimentations": "Movimentations",
+    
+    "details": "Details",
+    
+    "actualPrice": "Actual price",
+    
+    "dayVariation": "24H Variation",
+
+    "quantity": "Quantity",
+
+    "value": "Value",
+
+    "convertCurrency": "Convert currency",
+
+    "convert": "Conversion",
+
+    "available": "Available balance",
+
+    "convertQuestion": "How much would you like to convert?",
+
+    "insufficientFunds": "Insufficient funds",
+
+    "estimatedTotal": "Estimated Total",
+
+    "review": "Review",
+
+    "reviewQuote": "Review the data of your conversion",
+
+    "toConvert": "Convert",
+
+    "toReceive": "Receive",
+
+    "exchangeRate": "Exchange rate",
+
+    "completeConversion": "Complete conversion",
+
+    "conversionDone": "Conversion Done",
+
+    "conversionDoneQuote": "Currency conversion done successfully!",
+    
+    "noMovimentations": "No movimentations found!",
+
+    "receipt": "Movimentation Receipt",
+
+    "currency": "Currency",
+
+    "source": "Source",
+
+    "destination": "Destination",
+    
+    "movementDate": "Movement date",
+
+    "valueInReais": "Value in reais"
+}

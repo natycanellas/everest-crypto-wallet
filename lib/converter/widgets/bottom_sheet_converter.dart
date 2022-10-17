@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../portfolio/models/crypto_model.dart';
 import '../../review/view/review_page.dart';
 import '../../shared/args/arguments.dart';
@@ -41,9 +42,9 @@ class BottomSheetConverter extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Total Estimado',
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.estimatedTotal,
+                style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,
                   color: lightColor,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../shared/styles/colors.dart';
 import '../providers/providers.dart';
 
@@ -12,9 +13,9 @@ class AppBarDetails extends HookConsumerWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
-      title: const Text(
-        'Detalhes',
-        style: TextStyle(
+      title: Text(
+        AppLocalizations.of(context)!.details,
+        style: const TextStyle(
           color: darkColor,
           fontWeight: FontWeight.w700,
           fontSize: 23,

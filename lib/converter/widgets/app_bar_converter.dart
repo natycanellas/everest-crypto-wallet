@@ -2,6 +2,7 @@ import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../shared/styles/colors.dart';
 import '../providers/convert_providers.dart';
 
@@ -32,9 +33,9 @@ class AppBarConverter extends ConsumerWidget implements PreferredSizeWidget {
       ),
       elevation: 0.85,
       backgroundColor: Colors.white,
-      title: const Text(
-        'Converter',
-        style: TextStyle(
+      title: Text(
+        AppLocalizations.of(context)!.convert,
+        style: const TextStyle(
           fontSize: 20,
           color: darkColor,
           fontWeight: FontWeight.w700,

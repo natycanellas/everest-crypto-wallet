@@ -1,0 +1,63 @@
+{
+    "cryptoTitle": "Crypto",
+    "@cryptoTitle": {
+      "description": "titre de la page portefeuille"
+    },
+    "cryptoSubtitle": "Valeur totale des pièces de monnaie",
+    
+    "portfolio": "Portefeuille",
+    
+    "movimentations": "Mouvements",
+    
+    "details": "Détails",
+    
+    "actualPrice": "Prix ​​actuel",
+    
+    "dayVariation": "24H Variation",
+
+    "quantity": "Quantité",
+
+    "value": "Valeur",
+
+    "convertCurrency": "Convertir la monnaie",
+
+    "convert": "Convertir",
+
+    "available": "Solde disponible",
+
+    "convertQuestion": "Combien souhaitez-vous convertir?",
+
+    "insufficientFunds": "Fonds insuffisants",
+
+    "estimatedTotal": "Total estimé",
+
+    "review": "Revue",
+
+    "reviewQuote": "Passez en revue les données de votre conversion",
+
+    "toConvert": "Convertir",
+
+    "toReceive": "Recevoir",
+
+    "exchangeRate": "Taux de change",
+
+    "completeConversion": "Terminer conversion",
+
+    "conversionDone": "Conversion effectuée",
+
+    "conversionDoneQuote": "Conversion de monnaie effectuée avec succès !",
+    
+    "noMovimentations": "Aucun mouvement n'a été trouvé!",
+
+    "receipt": "Reçu de mouvement",
+
+    "currency": "Monnaie",
+
+    "source": "Source",
+
+    "destination": "Destination",
+    
+    "movementDate": "Date du mouvement",
+
+    "valueInReais": "Valeur in reais"
+}

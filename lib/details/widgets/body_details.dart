@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../converter/view/converter_page.dart';
+import '../../l10n/app_localizations.dart';
 import '../../portfolio/models/crypto_model.dart';
 import '../../shared/args/arguments.dart';
 import '../../shared/styles/colors.dart';
@@ -110,26 +111,26 @@ class BodyDetails extends HookConsumerWidget {
               ],
             ),
             CurrencyInfoCard(
-              infoText: 'Preço atual',
+              infoText: AppLocalizations.of(context)!.actualPrice,
               currencyInfo:
                   NumberFormat.simpleCurrency(locale: 'pt_BR', decimalDigits: 2)
                       .format((coin.actualPrice)),
               style: infoStyle,
             ),
             CurrencyInfoCard(
-              infoText: 'Variação 24H',
+              infoText: AppLocalizations.of(context)!.dayVariation,
               currencyInfo: coin.variation < 0
                   ? '-${coin.variation.toStringAsFixed(2)}%'
                   : '${coin.variation.toStringAsFixed(2)}%',
               style: variationStyle,
             ),
             CurrencyInfoCard(
-              infoText: 'Quantidade',
+              infoText: AppLocalizations.of(context)!.quantity,
               currencyInfo: '$amount ${coin.symbol.toUpperCase()}',
               style: infoStyle,
             ),
             CurrencyInfoCard(
-              infoText: 'Valor',
+              infoText: AppLocalizations.of(context)!.value,
               currencyInfo:
                   NumberFormat.simpleCurrency(locale: 'pt_BR', decimalDigits: 2)
                       .format((coin.actualPrice * amount.toDouble())),
@@ -137,7 +138,7 @@ class BodyDetails extends HookConsumerWidget {
             ),
             const SizedBox(height: 16),
             MagentaBottomButton(
-              title: 'Converter moeda',
+              title: AppLocalizations.of(context)!.convertCurrency,
               onPressed: () {
                 Navigator.pushNamed(
                   context,

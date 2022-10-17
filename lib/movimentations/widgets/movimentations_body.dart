@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:warren_first_task/l10n/app_localizations.dart';
 
 import '../../shared/styles/colors.dart';
 import 'list_view_movimentations.dart';
@@ -13,19 +14,19 @@ class MovimentationsBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Padding(
-            padding: EdgeInsets.only(left: 16,bottom: 24, top: 32),
+            padding: const EdgeInsets.only(left: 16,bottom: 24, top: 32),
             child: Text(
-              'Movimentações',
-              style: TextStyle(
+              AppLocalizations.of(context)!.movimentations,
+              style: const TextStyle(
                 fontSize: 32,
                 color: darkColor,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ),
-          Expanded(
+          const Expanded(
             child: ListViewMovimentations(),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../styles/colors.dart';
 
 class BottomNavigationCrypto extends StatelessWidget {
@@ -27,16 +28,16 @@ class BottomNavigationCrypto extends StatelessWidget {
       selectedItemColor: darkColor,
       selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w400),
       backgroundColor: Colors.white,
-      items: const <BottomNavigationBarItem>[
+      items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          activeIcon: Image(image: AssetImage('assets/images/WarrenOn.png')),
-          icon: Image(image: AssetImage('assets/images/WarrenOff.png')),
-          label: 'Portfólio',
+          activeIcon: const Image(image: AssetImage('assets/images/WarrenOn.png')),
+          icon: const Image(image: AssetImage('assets/images/WarrenOff.png')),
+          label: AppLocalizations.of(context)!.portfolio,
         ),
         BottomNavigationBarItem(
-          activeIcon: Image(image: AssetImage('assets/images/CryptoOn.png')),
-          icon: Image(image: AssetImage('assets/images/CryptoOff.png')),
-          label: 'Movimentações',
+          activeIcon: const Image(image: AssetImage('assets/images/CryptoOn.png')),
+          icon: const Image(image: AssetImage('assets/images/CryptoOff.png')),
+          label: AppLocalizations.of(context)!.movimentations,
         ),
       ],
       onTap: onItemTapped,
