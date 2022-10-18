@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../converter/providers/convert_providers.dart';
+import '../../l10n/app_localizations.dart';
 import '../../movimentations/models/movimentation_model.dart';
 import '../../movimentations/providers/movimentations_provider.dart';
 import '../../portfolio/models/crypto_model.dart';
@@ -42,7 +43,7 @@ class BottomSheetReview extends HookConsumerWidget {
             thickness: 1,
           ),
           SheetRowConversionInfo(
-            textOne: 'Converter',
+            textOne: AppLocalizations.of(context)!.toConvert,
             textTwo:
                 '${valueController.state.text.replaceAll('.', ',')} $abbrevFirstCrypto',
           ),
@@ -50,7 +51,7 @@ class BottomSheetReview extends HookConsumerWidget {
             thickness: 1,
           ),
           SheetRowConversionInfo(
-            textOne: 'Receber',
+            textOne: AppLocalizations.of(context)!.toReceive,
             textTwo:
                 '${estimatedTotal.state.toStringAsFixed(6).replaceAll('.', ',')} $abbrevSecCrypto',
           ),
@@ -58,7 +59,7 @@ class BottomSheetReview extends HookConsumerWidget {
             thickness: 1,
           ),
           SheetRowConversionInfo(
-            textOne: 'Câmbio',
+            textOne: AppLocalizations.of(context)!.exchangeRate,
             textTwo:
                 '1 $abbrevFirstCrypto = ${getExchangeRate().toStringAsFixed(2).replaceAll('.', ',')} $abbrevSecCrypto',
           ),
@@ -67,7 +68,7 @@ class BottomSheetReview extends HookConsumerWidget {
               height: 66,
               width: MediaQuery.of(context).size.width,
               child: MagentaBottomButton(
-                title: 'Concluir Conversão',
+                title: AppLocalizations.of(context)!.completeConversion,
                 onPressed: () {
                   Navigator.of(context).pushNamed(SuccessPage.route);
                   movimentation.state.add(

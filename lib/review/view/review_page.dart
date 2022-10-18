@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../portfolio/models/crypto_model.dart';
 import '../widgets/bottom_sheet_review.dart';
 import '../widgets/review_body.dart';
@@ -18,9 +19,9 @@ class ReviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Revisar',
-          style: TextStyle(
+        title: Text(
+          AppLocalizations.of(context)!.review,
+          style: const TextStyle(
             fontSize: 20,
             color: Colors.black,
             fontWeight: FontWeight.w700,

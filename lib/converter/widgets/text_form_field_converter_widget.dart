@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../portfolio/models/crypto_model.dart';
 import '../../shared/styles/colors.dart';
 import '../providers/convert_providers.dart';
@@ -43,7 +44,7 @@ class TextFormFieldConverterWidget extends HookConsumerWidget {
       ),
       onChanged: onChange,
       decoration: InputDecoration(
-        errorText: validationForController() ? null : 'Saldo Insuficiente',
+        errorText: validationForController() ? null : AppLocalizations.of(context)!.insufficientFunds,
         prefixIcon: Padding(
           padding: const EdgeInsets.only(top: 5, right: 8),
           child: Text(

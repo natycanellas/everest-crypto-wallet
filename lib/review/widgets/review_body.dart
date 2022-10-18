@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../shared/styles/colors.dart';
 
 class ReviewBody extends StatelessWidget {
@@ -10,12 +11,12 @@ class ReviewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
+      children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
           child: Text(
-            'Revise os dados da sua conversão',
-            style: TextStyle(
+            AppLocalizations.of(context)!.reviewQuote,
+            style: const TextStyle(
               fontSize: 34,
               color: darkColor,
               fontWeight: FontWeight.w700,

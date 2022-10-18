@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../shared/styles/colors.dart';
 import 'row_coin_info_detail.dart';
 
@@ -43,9 +44,9 @@ class ColumnCoinDetail extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 8),
-        RowCoinInfoDetail(title: 'Moeda', info: coinAbbrev),
+        RowCoinInfoDetail(title: AppLocalizations.of(context)!.currency, info: coinAbbrev),
         const SizedBox(height: 8),
-        RowCoinInfoDetail(title: 'Quantidade', info: coinValue),
+        RowCoinInfoDetail(title: AppLocalizations.of(context)!.quantity, info: coinValue),
       ],
     );
   }

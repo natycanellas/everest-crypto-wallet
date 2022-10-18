@@ -2,6 +2,7 @@ import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../portfolio/models/crypto_model.dart';
 import '../../shared/styles/colors.dart';
 
@@ -22,9 +23,9 @@ class AvailableBalanceConverter extends HookConsumerWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            'Saldo disponível',
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context)!.available,
+            style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w400,
               color: lightColor,

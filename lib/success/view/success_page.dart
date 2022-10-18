@@ -2,6 +2,7 @@ import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
+import 'package:warren_first_task/l10n/app_localizations.dart';
 
 import '../../converter/providers/convert_providers.dart';
 import '../../portfolio/view/crypto_page.dart';
@@ -45,18 +46,18 @@ class SuccessPage extends HookConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset(lottieSuccess, repeat: false, height: 100),
-          const Text(
-            'Conversão efetuada',
-            style: TextStyle(
+           Text(
+            AppLocalizations.of(context)!.conversionDone,
+            style: const TextStyle(
               fontSize: 34,
               color: darkColor,
               fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(height: 8),
-          const Text(
-            'Conversão de moeda efetuada com sucesso!',
-            style: TextStyle(
+           Text(
+            AppLocalizations.of(context)!.conversionDoneQuote,
+            style: const TextStyle(
               fontSize: 17,
               color: lightColor,
               fontWeight: FontWeight.w400,

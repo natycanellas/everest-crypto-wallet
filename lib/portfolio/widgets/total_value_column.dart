@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../shared/styles/colors.dart';
 import '../providers/dio_providers.dart';
 import '../providers/providers.dart';
@@ -60,9 +61,9 @@ class _TotalValueColumnState extends ConsumerState<TotalValueColumn> {
               }),
             ),
           ),
-          const Text(
-            'Valor total de moedas',
-            style: TextStyle(fontSize: 17, color: lightColor),
+          Text(
+             AppLocalizations.of(context)!.cryptoSubtitle,
+            style: const TextStyle(fontSize: 17, color: lightColor),
           ),
         ],
       ),
