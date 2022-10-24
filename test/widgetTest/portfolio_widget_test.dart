@@ -13,7 +13,7 @@ import 'package:warren_first_task/portfolio/widgets/list_view_cryptos.dart';
 import 'package:warren_first_task/portfolio/widgets/title_crypto_row.dart';
 import 'package:warren_first_task/portfolio/widgets/total_value_column.dart';
 
-import 'helper/setup_widget_tester.dart';
+import '../helper/setup_widget_tester.dart';
 
 void main() {
   setUpAll(

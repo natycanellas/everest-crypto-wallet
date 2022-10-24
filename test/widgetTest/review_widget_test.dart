@@ -9,7 +9,7 @@ import 'package:warren_first_task/review/view/review_page.dart';
 import 'package:warren_first_task/review/widgets/bottom_sheet_review.dart';
 import 'package:warren_first_task/review/widgets/review_body.dart';
 
-import 'helper/setup_widget_tester.dart';
+import '../helper/setup_widget_tester.dart';
 
 void main() {
   setUpAll(

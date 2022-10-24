@@ -12,7 +12,7 @@ import 'package:warren_first_task/movimentations/widgets/list_view_movimentation
 import 'package:warren_first_task/movimentations/widgets/movimentations_body.dart';
 import 'package:warren_first_task/portfolio/models/crypto_model.dart';
 
-import 'helper/setup_widget_tester.dart';
+import '../helper/setup_widget_tester.dart';
 
 void main() {
   setUpAll(

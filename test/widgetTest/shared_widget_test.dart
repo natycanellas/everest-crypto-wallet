@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:warren_first_task/shared/widgets/bottom_navigation_crypto.dart';
 import 'package:warren_first_task/shared/widgets/magenta_bottom_button.dart';
 
-import 'helper/setup_widget_tester.dart';
+import '../helper/setup_widget_tester.dart';
 
 void main() {
   setUpAll(

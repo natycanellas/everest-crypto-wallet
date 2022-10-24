@@ -12,8 +12,7 @@ import 'package:warren_first_task/details/widgets/button_days.dart';
 import 'package:warren_first_task/details/widgets/line_chart_widget.dart';
 import 'package:warren_first_task/portfolio/models/crypto_model.dart';
 
-import 'helper/setup_widget_tester.dart';
-
+import '../helper/setup_widget_tester.dart';
 void main() {
   setUpAll(
     () => HttpOverrides.global = null,

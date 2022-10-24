@@ -9,7 +9,7 @@ import 'package:warren_first_task/converter/widgets/bottom_sheet_converter.dart'
 import 'package:warren_first_task/converter/widgets/converter_body.dart';
 import 'package:warren_first_task/portfolio/models/crypto_model.dart';
 
-import 'helper/setup_widget_tester.dart';
+import '../helper/setup_widget_tester.dart';
 
 void main() {
   setUpAll(
