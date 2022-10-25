@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:warren_first_task/portfolio/view/crypto_page.dart';
 import 'package:warren_first_task/shared/widgets/bottom_navigation_crypto.dart';
 import 'package:warren_first_task/shared/widgets/magenta_bottom_button.dart';
 
@@ -21,6 +22,16 @@ void main() {
         ));
     expect(find.byType(BottomNavigationBar), findsOneWidget);
     await tester.pump(const Duration(seconds: 3));
+  });
+  testWidgets(
+      'WHEN taps Bottom Navigation Crypto THEN ensure it works',
+      (WidgetTester tester) async {
+    await loadPage(
+        tester,
+        const CryptoPage());
+    expect(find.byType(CryptoPage), findsOneWidget);
+    await tester.tap(find.byType(BottomNavigationCrypto));
+    await tester.pump(const Duration(seconds: 2));
   });
   testWidgets(
       'WHEN loads Magenta Bottom Button THEN ensure it returns the correct widgets',

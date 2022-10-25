@@ -42,6 +42,7 @@ void main() {
     await loadPage(tester, const TitleCryptoRow());
     expect(find.byType(DropDownButtonLocale), findsOneWidget);
     expect(find.byType(Padding), findsWidgets);
+    expect(find.byType(Text), findsWidgets);
     expect(find.byType(Row), findsWidgets);
     expect(find.byType(IconButton), findsOneWidget);
 

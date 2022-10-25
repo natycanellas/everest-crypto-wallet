@@ -15,11 +15,8 @@ class SetupWidgetTester extends StatelessWidget {
   final Widget child;
   final Locale? locale;
 
-  const SetupWidgetTester({
-    Key? key,
-    required this.child,
-    this.locale
-  }) : super(key: key);
+  const SetupWidgetTester({Key? key, required this.child, this.locale})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +41,14 @@ class SetupWidgetTester extends StatelessWidget {
       overrides: [
         secondSelectedCoinProvider.overrideWithValue(
           StateController(ethereum),
+        ),
+        converterReaisProvider.overrideWithValue(
+          StateController(Decimal.ten),
+        ),
+        valueCryptoTextFieldControllerProvider.overrideWithValue(
+          StateController(
+            TextEditingController(text: '0.0008'),
+          ),
         ),
         totalCalcProvider.overrideWithValue(
           StateController(

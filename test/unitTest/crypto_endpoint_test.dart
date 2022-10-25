@@ -9,7 +9,7 @@ import '../helper/api_factory.dart';
 class DioMock extends Mock implements Dio {}
 
 void main() {
-  late Response<Map<String, dynamic>> success;
+  late Response<List<Map<String, dynamic>>> success;
   late DioMock dioMock;
   late CryptosEndpoint endpoint;
 
@@ -20,7 +20,7 @@ void main() {
         );
       });
 
-  mockResponse(Map<String, dynamic> factory, int statusCode) {
+  mockResponse(List<Map<String, dynamic>> factory, int statusCode) {
     return Response(
       data: factory,
       statusCode: statusCode,
