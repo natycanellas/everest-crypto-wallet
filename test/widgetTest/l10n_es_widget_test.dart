@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'helper/l10n_tester.dart';
-import 'helper/setup_widget_tester.dart';
+import '../helper/l10n_tester.dart';
+import '../helper/setup_widget_tester.dart';
 
 void main() {
   setUpAll(
@@ -14,8 +14,8 @@ void main() {
       'WHEN sets locale to Spain THEN ensure it returns the correct language',
       (WidgetTester tester) async {
     await tester.pumpWidget(
-      SetupWidgetTester(
-        locale: const Locale('es'),
+      const SetupWidgetTester(
+        locale: Locale('es'),
         child: L10nTester(),
       ),
     );

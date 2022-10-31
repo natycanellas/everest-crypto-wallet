@@ -2,9 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lottie/lottie.dart';
 import 'package:warren_first_task/success/view/success_page.dart';
 
-import 'helper/setup_widget_tester.dart';
+import '../helper/setup_widget_tester.dart';
 
 void main() {
   setUpAll(
@@ -15,8 +16,11 @@ void main() {
     await loadPage(tester, const SuccessPage());
     expect(find.byType(AppBar), findsWidgets);
     expect(find.byIcon(Icons.close_rounded), findsOneWidget);
+    expect(find.byType(Lottie), findsOneWidget);
     expect(find.byType(Text), findsWidgets);
+    expect(find.byType(Column), findsWidgets);
     expect(find.byType(SizedBox), findsWidgets);
     await tester.pump(const Duration(seconds: 3));
+    await tester.tap(find.byIcon(Icons.close_rounded));
   });
 }
